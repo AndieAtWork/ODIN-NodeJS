@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" style="background-color: black;">
+<head>
+    <meta charset="UTF-8">
+    <title>Picture-Me</title>
+    <%- include('partials/head') %>
+</head>
+<body class="fitted-body">
+    <div id="blog-background">
+        <div id="blog-content">
+            <div id="blog-title">
+                <h1>
+                    <% if (locals.blogUser.title == null) { %> 
+                        <%= locals.blogUser.username %>'s blog 
+                    <% }else{ %>
+                        <%= locals.blogUser.title %>
+                    <% } %>
+                </h1>
+            </div>
+            <div id="blog-posts">
+                <% for (let post of locals.pictures) { %> 
+                    <div class="blog-post">
+                        <div class="blog-title"><%= post.title %></div>
+                        <div class="block">
+                        <% if (post.private == 1){ %>
+                            <% if (locals.currentUser){ %>
+                                <button class="private-modal-open" id="image-<%= post.post_id %>"><i class="fa-solid fa-unlock"></i></button>
+                            <% }else{ %>
+                                <button class="private-modal-closed" id="image-<%= post.post_id %>"><i class="fa-solid fa-lock"></i></button>
+                            <% } %>
+                        <% }else{ %>
+                            <img class="post-image" src="<%= post.image_url %>">
+                        <% } %>
+                        </div>
+                        <p class="post-text"><%= post.text %></p>
+                        <p class="blog-date">Date posted: <%= post.posted_date.toISOString().split("T")[0] %> <%= post.posted_date.toISOString().split("T")[1].split(".")[0] %></p>
+                        <% if (locals.currentUser && locals.currentUser.user_id == locals.blogUser.user_id) { %>
+                            <div class="post-button-container">
+                                <button class="post-button post-edit" onclick="editPost('<%= post.post_id %>')"><i class="fa-solid fa-pen"></i></button>
+                                <button class="post-button post-delete" onclick="deletePost('<%= post.post_id %>')"><i class="fa-solid fa-trash"></i></button>
+                            </div>
+                        <% } %>
+                    </div>
+                    <br><br>
+                <% } %>
+            </div>
+        </div>
+    </div>
+</body>
+
+<dialog id="image-modal">
+    <div id="image-container">
+    </div>
+    <button id="close-button">Close</button>
+</dialog>
+
+<dialog id="delete-modal">
+    <div id="delete-content">
+        <form id="delete-form" action="" method="POST" enctype="application/x-www-form-urlencoded">
+            <p>Do you wish to delete this post?</p>
+            <div id="delete-modal-btns">
+                <button type="button" id="delete-modal-close">Close</button>
+                <button type="submit" id="delete-modal-btn">Delete</button>
+            </div>
+        </form>
+    </div>
+</dialog>
+
+</html>
+
+<script src="/assets/javascript/imageManager.js"></script>

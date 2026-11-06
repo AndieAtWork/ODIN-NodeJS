@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Picture-Me</title>
+    <%- include('partials/head') %>
+</head>
+<body class="fitted-body">
+    <div id="login-container">
+        <div id="login-col-1">
+            <div id="login-form">
+                <h1>PICTURE-ME</h1>
+                <div id="login-errors">
+                    <% if (loginError) { %>
+                        <p class="error-msg"><%= loginError %></p>
+                    <% } %>
+                </div>
+                <form action="/" method="POST">
+                    <label for="username">Username</label>
+                    <br>
+                    <input id="username" name="username" placeholder="Username" type="text" />
+                    <br><br>
+                    <label for="password">Password</label>
+                    <br>
+                    <input id="password" name="password" type="password" placeholder="Password"/>
+                    <br>
+                    <div id="login-button">
+                        <button type="submit" class="enter-button">ENTER</button>
+                    </div>
+                </form>
+                <div id="sign-in-button">
+                    <a href="/sign-up">Create a new account</a>
+                </div>
+            </div>
+        </div>
+        <div id="login-col-2">
+        </div>
+    </div>
+</body>
+</html>

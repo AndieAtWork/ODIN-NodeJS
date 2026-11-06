@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/styles/styles.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <title>Where's Waldo?</title>
+</head>
+<body>
+    <div id="score-games-body">
+        <div id="score-content">
+            <div id="score-title">
+                <h1>TOP SCORES</h1>
+            </div>
+            <div id="score-subtitle">
+                <h2>Choose a game</h2>
+            </div>
+            <div id="scores-game-grid">
+                <div class="score-option">
+                    <img src="/images/thumbnail/waldo1.jpg" class="score-option-thumbnail">
+                    <button class="view" onclick="openScores(1, this);">View</button>
+                </div>
+                <div class="score-option">
+                    <img src="/images/thumbnail/waldo2.jpg" class="score-option-thumbnail">
+                    <button class="view" onclick="openScores(2, this);">View</button>
+                </div>
+                <div class="score-option">
+                    <img src="/images/thumbnail/waldo3.jpg" class="score-option-thumbnail">
+                    <button class="view" onclick="openScores(3, this);">View</button>
+                </div>
+                <div class="score-option">
+                    <img src="/images/thumbnail/waldo4.jpg" class="score-option-thumbnail">
+                    <button class="view" onclick="openScores(4, this);">View</button>
+                </div>
+                <div class="score-option">
+                    <img src="/images/thumbnail/waldo5.jpg" class="score-option-thumbnail">
+                    <button class="view" onclick="openScores(5, this);">View</button>
+                </div>
+                <div class="score-option">
+                    <img src="/images/thumbnail/waldo6.jpg" class="score-option-thumbnail">
+                    <button class="view" onclick="openScores(6, this);">View</button>
+                </div>
+            </div>
+            <div id="chart">
+                <div id="chart-title">
+                    <h2>TOP SCORES OF GAME <span class="highlight">#</span> <span id="game-number" class="highlight"></span></h2>
+                </div>
+                <div id="chart-content">
+                    <table id="top10">
+                        <head>
+                            <tr>
+                                <th>N°</th>
+                                <th>Name</th>
+                                <th>Time</th>
+                                <th>Date</th>
+                            </tr>
+                        </head>
+                        <tbody id="highscores">
+            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<script src="/javascript/game_engine.js"></script>
+<script>
+    loadScores();
+</script>

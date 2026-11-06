@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Picture-Me</title>
+    <%- include('partials/head') %>
+</head>
+<body class="fitted-body">
+    <div id="login-container">
+        <div id="login-col-3">
+        </div>
+        <div id="login-col-1">
+            <div id="login-form">
+                <h1>PICTURE-ME</h1>
+                <div id="sign-up-errors-container">
+                    <% if (locals && locals.errors && locals.errors.length > 0) {%> 
+                        <div>Errors:</div>
+                        <ul id="sign-up-errors">
+                            <% locals.errors.forEach(error => { %>
+                            <li class="error-msg"><%= error.msg %></li>
+                            <% }) %>
+                        </ul>
+                    <% } %>
+                </div>
+                <form action="/sign-up" method="POST">
+                    <label for="username">Username</label>
+                    <input 
+                            id="username" 
+                            name="username" 
+                            placeholder="Username" 
+                            type="text"
+                            value="<%= locals.formData?.username || '' %>" />
+                    <br><br>
+                    <label for="password">Password</label>
+                    <input 
+                            id="password" 
+                            name="password" 
+                            type="password" 
+                            placeholder="Password"
+                            value="<%= locals.formData?.password || '' %>"/>
+                    <br><br>
+                    <label for="passwordConfirm">Password Confirmation</label>
+                    <input 
+                            id="passwordConfirm" 
+                            name="passwordConfirm" 
+                            type="password" 
+                            placeholder="Confirm Password"
+                            value="<%= locals.formData?.passwordConfirm || '' %>"/>
+                    <br><br>
+                    <div id="sign-in-button">
+                        <button type="submit" class="enter-button">Sign Up</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

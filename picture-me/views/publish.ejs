@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" style="background-color: black;">
+<head>
+    <meta charset="UTF-8">
+    <title>Picture-Me</title>
+    <%- include('partials/head') %>
+</head>
+<body class="publish-body">
+    <!--<input type="hidden" id="finished" name="finished" value="<%= (locals.finished) ? 1 : 0 %>">-->
+    <div id="publish-background">
+        <div id="publish-content">
+            <div id="publish-title">
+                <% if (locals.editing){ %>
+                    <h1>Editing Post</h1>
+                <% }else{ %>
+                    <h1>Publishing Post</h1>
+                <% } %>
+            </div>
+            <div id="publish-body">
+                <% if (locals && locals.errors && locals.errors.length > 0) {%> 
+                    <div id="errors">
+                    <label>Errors:</label>
+                        <ul>
+                            <% locals.errors.forEach(error => { %>
+                            <li><%= error.msg %></li>
+                            <% }) %>
+                        </ul>
+                    </div>
+                <% } %>
+
+                <% if (locals.editing){ %>
+
+                    <form action="/blog/<%= locals.currentUser.username %>/<%= locals.image %>" method="POST" enctype="application/x-www-form-urlencoded">
+                        <input type="hidden" id="imageurl" name="imageurl" value="<%= locals.imageurl?? ''  %>">
+
+                <% }else{ %>
+
+                    <% if (locals.finished == true) { %>
+                        <form action="/blog/publish_post" method="POST" enctype="application/x-www-form-urlencoded">
+                    <% } else { %>
+                        <form action="/blog/publish_post_image" method="POST" enctype="multipart/form-data">
+                    <% } %>
+
+                    <input type="hidden" id="imageurl" name="imageurl" value="<%= locals.imageurl?? ''  %>">
+                    <input type="hidden" id="imageid" name="imageid" value="<%= locals.imageid?? '' %>">
+                    <input type="hidden" id="storedFilename" name="storedFilename" value="<%= locals.filename %>">
+                    <input type="hidden" id="privateStatus" name="privateStatus" value="<%= locals.private %>">
+
+                <% } %>
+                    <label for="image">Picture</label>
+
+                    <% if (locals.editing){ %>
+                        <div id="edit-image-container">
+                            <img id="edit-image" src="<%= locals.imageurl %>">
+                        </div>
+                    <% }else{ %>
+
+                        <% if (locals.finished) { %>
+                            <div id="upload-bar-container">
+                                <div id="delete-upload-btn"><i class="fa-solid fa-trash"></i></div>
+                                <div id="upload-bar" class="filled">
+                                    <div id="bar">
+                                        <div id="filename"><%= locals.filename %></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <input id="image" name="image" type="file" style="display:none;">
+                            <div id="edit-image-container">
+                                <img id="edit-image" src="<%= locals.imageurl %>">
+                            </div>
+                        <% } else { %>
+                            <div id="upload-bar-container">
+                                <div id="upload-btn"><i class="fa-solid fa-upload"></i></div>
+                                <div id="upload-bar" class="">
+                                    <div id="bar">
+                                        <div id="filename"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <input id="image" name="image" type="file" style="display:none;" accept=".jpg, .jpeg, .png">
+                            <br>
+                            <label for="private">Private picture</label>
+                            <input type="checkbox" name="private" id="private">
+                            <br>
+                        <% } %>
+        
+                    <% } %>
+                    
+                    <% if (locals.finished || locals.editing ) { %>
+                        <label for="title">Title</label>
+                        <div id="title-container">
+                            <input id="title" name="title" placeholder="Title" type="text" value="<%= locals.formData?.title ?? locals.title?? '' %>"/>
+                            <p>Characters: <span id="title-counter">0</span>/100</p>
+                        </div>
+                        <label for="description">Description (optional):</label>
+                        <div id="description-container">
+                            <textarea id="description" name="description"><%= locals.formData?.description ?? locals.text?? '' %></textarea>
+                            <p>Characters: <span id="text-counter">0</span>/2000</p>
+                        </div>
+                        <br>
+                    <% } %>
+                    <% if (!locals.finished && !locals.editing) { %>
+                        <button type="submit" class="publishing-btn" id="submit-picture-btn">Submit Picture</button>
+                    <% } else if (locals.finished && !locals.editing) { %>
+                        <button type="submit" class="publishing-btn" id="submit-post-btn">Submit Post</button>
+                    <% } else { %>
+                        <button type="submit" class="publishing-btn" id="edit-post-btn">Edit Post</button>
+                    <% } %>
+
+                <% if (locals.editing){ %>
+                    </form>
+                <% }else{ %>
+                    </form>
+                <% } %>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<script src="/assets/javascript/publishManager.js"></script>

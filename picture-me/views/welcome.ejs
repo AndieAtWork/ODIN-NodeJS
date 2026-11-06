@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Picture-Me</title>
+    <%- include('partials/head') %>
+</head>
+<body class="fitted-body black-background">
+    <div id="welcome-background-1"></div>
+
+    <div id="welcome-content" class="black-background">
+        <form action="/logout" method="POST">
+            <div id="welcome-title"><h1>Welcome back <%= locals.currentUser.username %></h1></div>
+            <div id="welcome-options">
+                <button id="option1" type="button" class="welcome-option" onclick="window.location.href='/blog/<%= locals.currentUser.username %>'">
+                    <div class="welcome-option-text">VIEW BLOG</div>
+                </button>
+                <button id="option2" type="button" class="welcome-option" onclick="window.location.href='/blog/publish_post'">
+                    <div class="welcome-option-text">POST ENTRY</div>
+                </button>
+                <button id="option3" type="submit" class="welcome-option">
+                    <div class="welcome-option-text">LOG OUT</div>
+                </button>
+            </div>
+        </form>
+    </div>
+    <div id="welcome-background-2"></div>
+</body>
+</html>

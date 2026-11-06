@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/styles/styles.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/izitoast@1.4.0/dist/css/iziToast.min.css">
+
+    <title>Where's Waldo?</title>
+</head>
+<body class="no-stretch">
+    <input type="hidden" id="waldo_x" value="<%= x %>">
+    <input type="hidden" id="waldo_y" value="<%= y %>">
+    <input type="hidden" id="game_id" value="<%= idGame %>">
+
+    <div id="play-game-body">
+        <div id="game-content">
+            <div id="game-title">
+
+            </div>
+            <div id="game">
+                <img id="game-img" src="/images/gamesImages/waldo<%= idGame %>.jpg">
+            </div>
+            <div id="pointer" class="hidden-pointer"></div>
+            <!--<img id="custom-cursor" src="/images/cursor.png" alt="">-->
+            <div id="game-timer">
+                TIMER:  <span id="timer-mins">00</span>:<span id="timer-secs">00</span>
+            </div>
+        </div>
+    </div>
+</body>
+
+<dialog id="win-modal">
+    <div id="win-content">
+        <div id="win-title">
+            <h1>You won!</h1>
+        </div>
+        <div id="win-input">
+            <label>Enter your name to publish your score!</label>
+            <br>
+            <input type="text" name="name" id="name" placeholder="Your name">
+            <br>
+            <div id=""buttons-win>
+                <button id="submitScore" onclick="submit();">Submit Score</button>
+                <button id="closeScore" onclick="closeScore();">Exit</button>
+            </div>
+        </div>
+    </div>
+</dialog>
+
+</html>
+
+<script src="https://cdn.jsdelivr.net/npm/izitoast@1.4.0/dist/js/iziToast.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+<script src="/javascript/game_engine2.js"></script>
+<script>
+    loadGame();
+</script>

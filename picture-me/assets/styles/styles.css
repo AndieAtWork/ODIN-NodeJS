@@ -1,0 +1,505 @@
+/* ______________ LOGIN  +  SIGN UP ______________ */
+
+.fitted-body{
+    margin: 0px;
+    height: 100vh;
+}
+
+#login-container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    height: 100%;
+    overflow: hidden;
+}
+
+#login-col-1{
+    background-color: rgb(17, 17, 17);
+    display: flex;
+    justify-content: center;
+}
+
+#login-col-2{
+    background-image: url("../images/side-image.jpg");
+}
+
+#login-col-3{
+    background-image: url("../images/side-image-3.png");
+}
+
+#login-form{
+    margin-top: 30px;
+    font-family: "Instrument Serif", serif;
+    color: white;
+}
+
+#login-form h1{
+    font-size: 70px; 
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+#login-form label{
+    font-size: 30px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+#login-form input{
+    width: 100%;
+    padding:10px;
+    border-radius: 10px;
+}
+
+.enter-button{
+    color: white;
+    font-family: "Instrument Serif", serif;
+    font-size: 30px;
+    margin-top: 25px;
+    padding: 10px;
+    padding-left: 25px;
+    padding-right: 25px;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    border: 1px solid black;
+
+    transition: transform 0.3s ease;
+}
+
+.enter-button:hover{
+    transform: scale(1.2);
+}
+
+#login-button{
+    display: flex;
+    justify-content: center;
+}
+
+#login-button button{
+    background-color: rgb(255 58 172);
+}
+
+#sign-in-button{
+    display: flex;
+    justify-content: center;
+}
+
+#sign-in-button button{
+    background-color: rgb(37 132 147);
+}
+
+#sign-up-errors .error-msg, #login-errors .error-msg{
+    color: #70d3dd;
+    font-size: 18px;
+}
+
+#login-errors .error-msg{
+    color: rgb(255 58 172);
+    font-size: 18px;
+}
+
+#sign-in-button a{
+    color: white;
+    margin: 40px;
+    font-family: "Instrument Serif", serif;
+}
+
+
+/* ______________ WELCOME ______________ */
+
+#welcome-background-1{
+    background-image: url(../images/welcome-top.jpg);
+    height: 30%;
+    background-size: cover;
+    background-position-y: 90%;
+    background-position-x: 100px;
+    background-repeat: no-repeat;
+    position:relative;
+}
+
+#welcome-content{
+    height: 40%;
+}
+
+#welcome-background-2{
+    background-image: url(../images/welcome-bottom.jpg);
+    height: 30%;
+    background-size: cover;
+    background-position-y: 10%;
+    background-position-x: -100px;
+    background-repeat: no-repeat;
+    position:relative;
+}
+
+.black-background{
+    background-color: black;
+}
+
+#welcome-title{
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-family: "Instrument Serif", serif;
+}
+
+#welcome-options{
+    display: flex;
+    justify-content: center;
+    gap: 70px;
+}
+
+.welcome-option{
+    width: 150px;
+    height: 150px;
+    border: 3px solid white;
+    border-radius: 10px;
+    background-color: black;
+    cursor: pointer;
+    color: white;
+}
+
+.welcome-option:hover{
+    color: black;
+    background-color: white;
+}
+
+.welcome-option-text{
+    font-family: "Instrument Serif", serif;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+
+/* ______________ BLOG ______________ */
+
+#blog-background{
+    background-color: black;
+    margin: 0px;
+    display: flex;
+    justify-content: center;
+}
+
+#blog-content{
+    width: 650px;
+}
+
+#blog-title{
+    display: flex;
+    justify-content: center;
+    font-family: "Instrument Serif", serif;
+    font-size: 25px;
+    color: white;
+}
+
+#blog-posts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    font-family: "Instrument Serif", serif;
+}
+
+.blog-post {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 650px;
+    box-sizing: border-box;
+}
+
+.blog-title{
+    padding: 10px;
+    color: white;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.block{
+    display: flex;
+    justify-content: center;
+    background-color: #161616;
+    min-height: 300px;
+}
+
+.private-modal-open, .private-modal-closed{
+    background-color: #161616;
+    width: 100%;
+    font-size: 200px;
+    color: white;
+}
+
+.blog-date {
+    color: white;
+    align-self: end;
+    font-family: system-ui;
+}
+
+.post-image {
+    display: block;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    align-self: center;
+}
+
+.post-text{
+    color: white;
+    font-family: system-ui;
+    margin-bottom: 0px;
+}
+
+.post-button-container{
+    align-self: end;
+}
+
+.post-button{
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.post-edit{
+    background-color: white;
+}
+
+.post-delete{
+    background-color: indianred;
+}
+
+#image-container{
+    display: flex;
+    justify-content: center;
+    background-color: #161616;
+    min-height: 400px;
+}
+
+#private-post-image{
+    max-width: 400px;
+    max-height: 400px;
+    user-select: none;
+}
+
+#image-modal{
+    width: 500px;
+    height: 450px;
+    background-color: #1b1a1a;;
+}
+
+#close-button{
+    color: black;
+    background-color: white;
+    padding: 5px;
+    width: 100%;
+}
+
+#close-button:hover{
+    color: white;
+    background-color: black;
+}
+
+#delete-modal{
+    background-color: #f9c1c1;
+    border: 1px solid #a58181;
+    border-radius: 5px;
+    font-family: system-ui;
+}
+
+#delete-form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#delete-modal-btn{
+    background-color: #d87a7a;
+    border: none;
+    padding: 10px;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#delete-modal-close{
+    background-color: #b5a7a7;
+    border: none;
+    padding: 10px;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* ______________ PUBLISH AND EDIT ______________ */
+
+.publish-body{
+    margin: 0px;
+    height: fit-content;
+}
+
+#publish-background{
+    background-color: black;
+    margin: 0px;
+    display: flex;
+    justify-content: center;
+}
+
+#publish-content{
+    width: 650px;
+    background-color: white;
+    height: fit-content;
+    padding: 20px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    font-family: "Instrument Serif", serif;
+}
+
+#publish-title{
+    align-self: center;
+}
+
+#publish-body{
+    align-self: center;
+    width: 500px;
+    font-family: system-ui;
+}
+
+#publish-body label{
+    font-weight: bold;
+}
+
+#title-container{
+    margin-bottom: 20px;
+}
+
+#title-container p{
+    margin: 0px;
+    font-size: 13px;
+}
+
+#title{
+    width: 100%;
+    padding: 5px;
+}
+
+#upload-bar-container{
+    display: flex;
+    width: 514px;
+    margin-bottom: 20px;
+}
+
+#upload-btn{
+    border: 1px solid black;
+    padding: 5px;
+    background-color: lightgray;
+    height: 25px;
+    width: 18px;
+    cursor: pointer;
+}
+
+#delete-upload-btn{
+    border: 1px solid black;
+    padding: 5px;
+    background-color: black;
+    height: 25px;
+    width: 18px;
+    cursor: pointer;
+    color: white;
+}
+
+#delete-upload-btn:hover{
+    border: 1px solid black;
+    background-color: white;
+    color: black;
+}
+
+#upload-bar{
+    border: 1px solid black;
+    width: 100%;
+    border-left: none;
+}
+
+#bar{
+    background-color: #d1ee90;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    width: 0%;
+}
+
+#filename{
+    margin-left: 10px;
+}
+
+.filled{
+    background-color: #d8f0a5;
+}
+
+#upload-file-name{
+    margin: 0px;
+    margin-top: 5px;
+    margin-left: 5px;
+}
+
+#description-container{
+    margin-bottom: 20px;
+}
+
+#description-container p{
+    margin: 0px;
+    font-size: 13px;
+}
+
+#description{
+    width: 510px;
+    height: 100px;
+}
+
+.publishing-btn{
+    display: block;
+    width: 150px;
+    margin: 0 auto;
+    margin-top: 20px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid black;
+    background-color: black;
+    color: white;
+    font-family: "Instrument Serif", serif;
+    font-weight: bold;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.publishing-btn:hover{
+    background-color: white;
+    border: 1px solid black;
+    color: black;
+}
+
+#edit-image-container{
+    display: flex;
+    justify-content: center;
+    background-color: #161616;
+    max-height: 400px;
+    max-width: 400px;
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+#edit-image{
+    max-width: 400px;
+    max-height: 400px;
+    user-select: none;
+}
+
+#errors{
+    padding: 6px;
+    background-color: lightyellow;
+    margin-bottom: 10px;
+}
+
+#errors ul{
+    margin: 0px;
+}

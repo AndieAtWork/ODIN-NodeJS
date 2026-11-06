@@ -1,0 +1,28 @@
+CREATE TABLE IF NOT EXISTS public.waldo_game
+(
+    game_id integer NOT NULL GENERATED ALWAYS AS IDENTITY ( INCREMENT 1 START 1 MINVALUE 1 MAXVALUE 2147483647 CACHE 1 ),
+    waldo_x integer NOT NULL,
+    waldo_y integer NOT NULL,
+    game_number integer NOT NULL,
+    CONSTRAINT waldo_game_pkey PRIMARY KEY (game_id)
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.waldo_game
+    OWNER to postgres;
+
+CREATE TABLE IF NOT EXISTS public.player
+(
+    player_id integer NOT NULL GENERATED ALWAYS AS IDENTITY ( INCREMENT 1 START 1 MINVALUE 1 MAXVALUE 2147483647 CACHE 1 ),
+    username character varying(20) COLLATE pg_catalog."default" NOT NULL,
+    time_score integer NOT NULL,
+    date timestamp with time zone NOT NULL,
+    game_id integer NOT NULL,
+    CONSTRAINT player_pkey PRIMARY KEY (player_id)
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.player
+    OWNER to postgres;
