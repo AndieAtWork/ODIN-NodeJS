@@ -31,7 +31,51 @@ Technologies used:
 - SQL
 - Awesome implementation: When the pictures that are "secret" are seen, the scr of the image appears as a link to the same app instead of a cloudinary url. You can't steal the original link. (And you can't download it because it doesn't let you open the right click menu). Of course there's always a way, for example using developer tools, but it was interesting to implement.
 
+Login
+<p align="center">
+  <img src="https://andieatwork.wordpress.com/wp-content/uploads/2026/11/gi1a.gif" width="500" />
+</p>
+<p align="center">
+  <img src="https://andieatwork.wordpress.com/wp-content/uploads/2026/11/gi1tb2.gif" width="500" />
+</p>
 
+Sign up
+<p align="center">
+  <img src="https://andieatwork.wordpress.com/wp-content/uploads/2026/11/gif2-4.gif" width="500" />
+</p>
+
+Post picture
+<p align="center">
+  <img src="https://andieatwork.wordpress.com/wp-content/uploads/2026/11/gif3-3.gif" width="500" />
+</p>
+
+Post picture (private)
+<p align="center">
+  <img src="https://andieatwork.wordpress.com/wp-content/uploads/2026/11/gif4-2.gif" width="500" />
+</p>
+
+Picture posted, edited and deleted
+<p align="center">
+  <img src="https://andieatwork.wordpress.com/wp-content/uploads/2026/11/gif5-1.gif" width="500" />
+</p>
+
+What a non-user sees
+<p align="center">
+  <img src="https://andieatwork.wordpress.com/wp-content/uploads/2026/11/secret.png" width="500" />
+</p>
+
+Validation:
+<p align="center">
+  <img src="https://andieatwork.wordpress.com/wp-content/uploads/2026/11/validation1-1.png" width="500" />
+</p>
+<p align="center">
+  <img src="https://andieatwork.wordpress.com/wp-content/uploads/2026/11/validation2-1.png" width="500" />
+</p>
+
+A "secret" post
+<p align="center">
+  <img src="https://andieatwork.wordpress.com/wp-content/uploads/2026/11/blocked.png?w=920" width="500" />
+</p>
 
 ## Waldo
 
