@@ -17,7 +17,7 @@ Contents:
 - CORS
 - The making of an API to be used by an external client
 
-This time all the CSS *is* fully made by me, so I'll take the credit.
+This time all the CSS *is* fully made by me, so I'll take the credit whatever it's worth.
 
 ## PictureMe
 PictureMe is an aproximation to what fotolog felt like in my childhood, though it has limited capabilities of course because that wasn't the point.
@@ -29,6 +29,29 @@ Technologies used:
 - bcryptjs for the passwords
 - Express validator for when you create a new account or publish/edit posts
 - SQL
-- Awesome implementation: When the pictures that are "secret" are seen, the scr of the image appears as a link to the app instead of cloudinary. You can't steal the original link. (And you can't download it because it doesn't let you open the right click menu). Of course there's always a way, for example using developer tools, but it was interesting to implement.
+- Awesome implementation: When the pictures that are "secret" are seen, the scr of the image appears as a link to the same app instead of a cloudinary url. You can't steal the original link. (And you can't download it because it doesn't let you open the right click menu). Of course there's always a way, for example using developer tools, but it was interesting to implement.
+
+<p align="center">
+  <img src="https://andieatwork.wordpress.com/wp-content/uploads/2026/11/gif1-3.gif" width="500" />
+</p>
+
+<p align="center">
+  <img src="https://andieatwork.wordpress.com/wp-content/uploads/2026/11/gif2-2.gif" width="500" />
+</p>
+
+<p align="center">
+  <img src="https://andieatwork.wordpress.com/wp-content/uploads/2026/11/gif3-1.gif" width="500" />
+</p>
+
+<p align="center">
+  <img src="https://andieatwork.wordpress.com/wp-content/uploads/2026/11/gif4-1.gif" width="500" />
+</p>
+
+<p align="center">
+  <img src="https://andieatwork.wordpress.com/wp-content/uploads/2026/11/gif5.gif" width="500" />
+</p>
 
 ## Waldo
+
+
+## Blogger (Just a peak, go check out its own repository!)
