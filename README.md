@@ -79,5 +79,25 @@ A "secret" post
 
 ## Waldo
 
+Just a silly game to try cool graphics to be honest.
+Clicking makes a circle effect I really liked.
+
+<p align="center">
+  <img src="https://andieatwork.wordpress.com/wp-content/uploads/2026/11/gif1-4.gif" width="800" />
+</p>
+
+Notice that it opens the game you were playing with your recent highscore highlighted.
+<p align="center">
+  <img src="https://andieatwork.wordpress.com/wp-content/uploads/2026/11/gif2-3.gif" width="800" />
+</p>
+
+<p align="center">
+  <img src="https://andieatwork.wordpress.com/wp-content/uploads/2026/11/gif3-2.gif?w=2048" width="800" />
+</p>
+
 
 ## Blogger (Just a peak, go check out its own repository!)
+
+<p align="center">
+  <img src="https://andieatwork.wordpress.com/wp-content/uploads/2026/11/gif1.gif" width="800" />
+</p>
